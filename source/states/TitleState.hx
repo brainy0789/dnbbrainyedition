@@ -18,6 +18,8 @@ import shaders.ColorSwap;
 import states.StoryMenuState;
 import states.MainMenuState;
 
+import states.SongSelectState;
+
 typedef TitleData =
 {
 	var titlex:Float;
@@ -387,7 +389,7 @@ class TitleState extends MusicBeatState
 
 				new FlxTimer().start(1, function(tmr:FlxTimer)
 				{
-					MusicBeatState.switchState(new MainMenuState());
+					MusicBeatState.switchState(new SongSelectState());
 					closedState = true;
 				});
 				// FlxG.sound.play(Paths.music('titleShoot'), 0.7);
