@@ -326,7 +326,7 @@ class PlayState extends MusicBeatState
 		storyDifficultyText = Difficulty.getString();
 
 		if (isStoryMode)
-			detailsText = "Story Mode: " + WeekData.getCurrentWeek().weekName;
+			detailsText = "Story Mode";
 		else
 			detailsText = "Freeplay";
 
@@ -2426,11 +2426,6 @@ class PlayState extends MusicBeatState
 		deathCounter = 0;
 		seenCutscene = false;
 
-		#if ACHIEVEMENTS_ALLOWED
-		var weekNoMiss:String = WeekData.getWeekFileName() + '_nomiss';
-		checkForAchievement([weekNoMiss, 'ur_bad', 'ur_good', 'hype', 'two_keys', 'toastie' #if BASE_GAME_FILES, 'debugger' #end]);
-		#end
-
 		var ret:Dynamic = callOnScripts('onEndSong', null, true);
 		if(ret != LuaUtils.Function_Stop && !transitioning)
 		{
@@ -2449,7 +2444,7 @@ class PlayState extends MusicBeatState
 
 			if (isStoryMode)
 			{
-				campaignScore += songScore;
+				/**campaignScore += songScore;
 				campaignMisses += songMisses;
 
 				storyPlaylist.remove(storyPlaylist[0]);
@@ -2460,10 +2455,10 @@ class PlayState extends MusicBeatState
 					FlxG.sound.playMusic(Paths.music('freakyMenu'));
 					#if DISCORD_ALLOWED DiscordClient.resetClientID(); #end
 
-					canResync = false;
-					MusicBeatState.switchState(new StoryMenuState());
+					canResync = false;**/
+				MusicBeatState.switchState(new states.SongSelectState());
 
-					// if ()
+					/*// if ()
 					if(!ClientPrefs.getGameplaySetting('practice') && !ClientPrefs.getGameplaySetting('botplay')) {
 						StoryMenuState.weekCompleted.set(WeekData.weeksList[storyWeek], true);
 						Highscore.saveWeekScore(WeekData.getWeekFileName(), campaignScore, storyDifficulty);
@@ -2490,7 +2485,7 @@ class PlayState extends MusicBeatState
 					canResync = false;
 					LoadingState.prepareToSong();
 					LoadingState.loadAndSwitchState(new PlayState(), false, false);
-				}
+				}*/
 			}
 			else
 			{
