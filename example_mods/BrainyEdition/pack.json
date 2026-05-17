@@ -1,8 +1,8 @@
 {
-	"name": "Name",
-	"description": "Description",
+	"name": "Dave and Bambi: Brainy Edition",
+	"description": "Some base stuff for Brainy Edition. DO NOT DISABLE OR DELETE!",
 	"restart":false,
-	"runsGlobally": false,
+	"runsGlobally": true,
 	"color": [170, 0, 255],
 	"discordRPC": "863222024192262205",
 	"iconFramerate": 10

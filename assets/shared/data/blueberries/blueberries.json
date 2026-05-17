@@ -1135,11 +1135,11 @@
 		}
 	],
 	"events": [],
-	"player2": "dad",
+	"player2": "banberry",
 	"offset": 0,
 	"song": "Blueberries",
 	"needsVoices": true,
-	"stage": "stage",
+	"stage": "blueberry",
 	"bpm": 165,
 	"speed": 2.9,
 	"format": "psych_v1"
